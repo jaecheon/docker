@@ -1,0 +1,14 @@
+version: '2'
+services:
+  express:
+    hostname: express
+    working_dir: /usr/share/express/app
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+        - "4100:4100"
+    restart: always
+    volumes:
+        - ".:/usr/share/express/app"
+        - "/usr/share/express/app/node_modules"

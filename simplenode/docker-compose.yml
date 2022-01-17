@@ -1,0 +1,14 @@
+version: '2'
+services:
+  simplenode:
+    hostname: simplenode-host
+    # working_dir: /usr/share/simplenode
+    build:
+        context: .
+        dockerfile: Dockerfile
+    # command: nodemon --inspect=0.0.0.0:5000 app.js
+    ports:
+        - "5000:5000"
+    restart: always
+    volumes:
+        - ".:/usr/share/simplenode"

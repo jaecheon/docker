@@ -1,0 +1,12 @@
+version: '2'
+services:
+  nginx_server:
+    hostname: nginx-server
+    working_dir: /usr/share/nginx_server/app
+    build:
+        context: ./
+    ports:
+        - "4040:4040"
+    restart: always
+    volumes:
+        - ".:/usr/share/nginx_server/app"
